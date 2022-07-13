@@ -1,0 +1,13 @@
+#!/bin/bash
+#check if script is running as root
+
+if [ "$EUID" -ne 0 ]
+	then echo "This script must be run as root. It impacts several boot parameters and files only accessible by root"
+	else
+		cp /etc/grub.d/10_linux.dgpu_disabled /etc/grub.d/10_linux
+		cp /etc/default/grub.dgpu_disabled /etc/default/grub
+		update-grub
+		echo "DGPU disabled in grub and grub updated"
+fi
+
+echo "You must restart the system to disable the DGPU"
