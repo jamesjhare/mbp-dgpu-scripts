@@ -11,3 +11,5 @@ Copy 10_linux.dgpu_disabled and 10_linux.dgpu_enabled to /etc/grub.d
 Copy grub.dgpu_disabled and grub.dgpu_enabled to /etc/default
 
 The scripts must be run as a user with permission to alter boot entries and configuration files in /etc -- typically root and as written checks that root is running the script.
+
+Yes I know this could be done cleaner and more fault-tolerant. Maybe I'll get to that.
